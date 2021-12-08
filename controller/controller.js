@@ -2,7 +2,11 @@ const { response } = require("express");
 const mongo = require("../mongo/mongo");
 
 const homePage = (req, res, next) => {
-  res.status(200).sendFile("index.html", { root: "./views" });
+  res.status(200).send({
+    message: "App is running at 3000",
+    code: 200,
+    status: true
+});
 };
 
 const createSalesOrder = (req, res, next) => {

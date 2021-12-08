@@ -78,7 +78,6 @@ const getBooks = async (req, res, next) => {
 
 const getBooksByOrderID = (req, res, next) => {
   console.log(req.query)
-  let query =
    mongo
     .readOne(req.query)
     .then((response) => {

@@ -5,7 +5,7 @@ const mongo = require('./mongo/mongo'); // import the routes
 var path = require('path');
 
 require('dotenv').config(); //to access .env file
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))

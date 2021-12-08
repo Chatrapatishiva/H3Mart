@@ -2,7 +2,11 @@ const { response } = require("express");
 const mongo = require("../mongo/mongo");
 
 const homePage = (req, res, next) => {
-  res.status(200).sendFile("index.html", { root: "./views" });
+  res.status(200).send({
+    message: "App is running at 3000",
+    code: 200,
+    status: true
+});
 };
 
 const createSalesOrder = (req, res, next) => {
@@ -74,7 +78,6 @@ const getBooks = async (req, res, next) => {
 
 const getBooksByOrderID = (req, res, next) => {
   console.log(req.query)
-  let query =
    mongo
     .readOne(req.query)
     .then((response) => {
